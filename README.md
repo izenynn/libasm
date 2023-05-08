@@ -2,15 +2,15 @@
 
 ## Info
 
-The aim of this project is to get familiar with assembly language by reconding a few libc functions for MACOS.
+The aim of this project is to get familiar with assembly language by reconding a few libc functions for MACOS x86_64 assembly.
 
 - Status: finished
 - Result: 100%
-- Observations: macho64 nasm assembly
+- Observations: for macho64 nasm
 
 *developed by: [izenynn](https://github.com/izenynn)*
 
-## Functions
+## List of functions
 
 | <!-- -->    | <!-- -->     |
 | ----------- | ------------ |
