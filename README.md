@@ -12,6 +12,7 @@ The aim of this project is to get familiar with assembly language by reconding a
 
 ## Functions
 
+| <!-- -->    | <!-- -->     |
 | ----------- | ------------ |
 | `ft_strlen` | man 3 strlen |
 | `ft_strcpy` | man 3 strcpy |
