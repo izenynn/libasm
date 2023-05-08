@@ -3,6 +3,7 @@
 # **************************************************************************** #
 
 NAME = libasm.a
+#NAME = libft.a
 
 # **************************************************************************** #
 #                                   COMPILER                                   #
@@ -36,6 +37,11 @@ OBJ_PATH := obj
 
 SRC_FILES := \
 		ft_strlen.s		\
+		ft_strcpy.s		\
+		ft_strcmp.s		\
+		ft_write.s		\
+		ft_read.s		\
+		ft_strdup.s		\
 
 OBJ_FILES := $(patsubst %.s,%.o,$(patsubst %.c,%.o,$(SRC_FILES)))
 
