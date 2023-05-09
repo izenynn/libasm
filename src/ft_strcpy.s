@@ -36,7 +36,7 @@ _ft_strcpy:
     mov rax, rdi
     mov rcx, -1
 .loop:
-    inc rcx;
+    inc rcx
     mov dl, byte [rsi + rcx]
     mov byte [rdi + rcx], dl
 
