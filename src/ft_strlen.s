@@ -13,37 +13,39 @@
 section .text
     global _ft_strlen
 
-;_ft_strlen:
-;    ; save callee-saved registers (none in this case)
+; VERSION 1
+; _ft_strlen:
+;     ; save callee-saved registers (none in this case)
 ;
-;    ; initialize length counter (rax) to 0
-;    xor rax, rax
+;     ; initialize length counter (rax) to 0
+;     xor rax, rax
+; 
+;     ; loop until a null character is found
+; .loop:
+;     ; load the current character into rcx
+;     movzx rcx, byte [rdi + rax]
+; 
+;     ; check if the current character is null
+;     test rcx, rcx
+;     jz .done
+;     ; Alternative: compare and jump if equal
+;     ; cmp byte rcx, 0
+;     ; cmp cl, 0
+;     ; je .done
 ;
-;    ; loop until a null character is found
-;.loop:
-;    ; load the current character into rcx
-;    movzx rcx, byte [rdi + rax]
+;     ; increment length counter
+;     inc rax
 ;
-;    ; check if the current character is null
-;    test rcx, rcx
-;    jz .done
-;    ; Alternative: compare and jump if equal
-;    ; cmp byte rcx, 0
-;    ; cmp cl, 0
-;    ; je .done
+;     ; continue with the next character
+;     jmp .loop
 ;
-;    ; increment length counter
-;    inc rax
+; .done:
+;     ; restore callee-saved registers (none in this case)
 ;
-;    ; continue with the next character
-;    jmp .loop
-;
-;.done:
-;    ; restore callee-saved registers (none in this case)
-;
-;    ; return
-;    ret
+;     ; return
+;     ret
 
+; VERSION 2
 _ft_strlen:
     mov rax, -1
 .loop:
