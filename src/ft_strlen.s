@@ -1,14 +1,14 @@
-; function: _ft_strlen
-;     size_t ft_strlen(const char* s);
+; function:
+; size_t ft_strlen(const char* s);
 ;
 ; input:
-;     rdi - address of the null-terminated string
+; rdi - address of the null-terminated string
 ;
 ; output:
-;     rax - length of the string (excluding the null character)
+; rax - length of the string (excluding the null character)
 ;
 ; clobbered registers:
-;     rax
+; rax
 
 section .text
     global _ft_strlen
