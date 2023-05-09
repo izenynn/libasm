@@ -11,9 +11,9 @@
 ; clobbered registers:
 ; rax, rcx, rdx
 
-section .text
     global _ft_strcmp
 
+    section .text
 _ft_strcmp:
     mov rax, -1
 .loop:

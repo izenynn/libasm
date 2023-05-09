@@ -11,9 +11,9 @@
 ; clobbered registers:
 ; rax, rcx, rdx
 
-section .text
     global _ft_strcpy
 
+    section .text
 ; VERSION 1
 ; _ft_strcpy:
 ;     mov rax, rdi

@@ -10,9 +10,9 @@
 ; clobbered registers:
 ; rax
 
-section .text
     global _ft_strlen
 
+    section .text
 ; VERSION 1
 ; _ft_strlen:
 ;     ; save callee-saved registers (none in this case)
