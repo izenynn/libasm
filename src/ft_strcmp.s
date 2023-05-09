@@ -6,7 +6,6 @@
 ; rsi - address of s2 string
 ;
 ; output:
-; rax - address of the dest string
 ; rax - integer difference according as s1 is >,== or < than s2
 ;
 ; clobbered registers:
