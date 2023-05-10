@@ -11,6 +11,7 @@ NAME = libasm.a
 
 RM = rm -rf
 MKDIR = mkdir
+MAKE = make
 
 AR = ar
 ARFLAGS = rcs
@@ -25,11 +26,12 @@ CFLAGS = -Wall -Wextra -Werror -Wpedantic -Wshadow -O2
 CFLAGS += -I./include
 
 # **************************************************************************** #
-#                                    PATHS                                     #
+#                                    DIRS                                      #
 # **************************************************************************** #
 
-SRC_PATH := src
-OBJ_PATH := obj
+SRC_DIR := src
+OBJ_DIR := obj
+INC_DIR := include
 
 # **************************************************************************** #
 #                                   SOURCES                                    #
@@ -45,31 +47,54 @@ SRC_FILES := \
 
 OBJ_FILES := $(patsubst %.s,%.o,$(patsubst %.c,%.o,$(SRC_FILES)))
 
-SRC := $(addprefix $(SRC_PATH)/, $(SRC_FILES))
-OBJ := $(addprefix $(OBJ_PATH)/, $(OBJ_FILES))
+SRC := $(addprefix $(SRC_DIR)/, $(SRC_FILES))
+OBJ := $(addprefix $(OBJ_DIR)/, $(OBJ_FILES))
+
+# **************************************************************************** #
+#                                    TESTS                                     #
+# **************************************************************************** #
+
+TEST_DIR := mini-unit
+
+TEST_SRC_FILES := \
+		ft_strlen_test.c	\
+		ft_strcmp_test.c	\
+
+TEST_SRC := $(addprefix $(SRC_DIR)/, $(TEST_SRC_FILES))
 
 # **************************************************************************** #
 #                                    RULES                                     #
 # **************************************************************************** #
 
+# all
+SILENT := all
 PHONY := all
 all: $(NAME)
 
+# name
 $(NAME): $(OBJ)
 	$(AR) $(ARFLAGS) $@ $^
 
-$(OBJ_PATH)/%.o: $(SRC_PATH)/%.s | $(OBJ_PATH)
+# obj
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.s | $(OBJ_DIR)
 	$(AS) $(ASFLAGS) -o $@ $<
 
-$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c | $(OBJ_PATH)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c -o $@ $<
 
-$(OBJ_PATH):
+$(OBJ_DIR):
 	$(MKDIR) $@
 
+# tests
+PHONY += test
+test:
+	$(MAKE) -C $(TEST_DIR) SRC='$(SRC)' TEST_SRC='$(TEST_SRC)' RELATIVE_PATH='..' INCLUDES='$(INC_DIR)'
+
+# utils
 PHONY += clean
 clean:
-	$(RM) $(OBJ_PATH)
+	$(MAKE) -C $(TEST_DIR) fclean
+	$(RM) $(OBJ_DIR)
 
 PHONY += fclean
 fclean: clean
@@ -78,4 +103,5 @@ fclean: clean
 PHONY += re
 re: fclean all
 
+.SILENT: $(SILENT)
 .PHONY: $(PHONY)
