@@ -53,7 +53,7 @@ _ft_strdup:
 
     ; error returns -1
     mov rax, -1
-.done
+.done:
     ; restore callee-saved registers (and fix up the stack in this case)
     pop rbx
 
