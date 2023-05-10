@@ -61,6 +61,7 @@ TEST_SRC_FILES := \
 		ft_strcpy_test.c	\
 		ft_strcmp_test.c	\
 		ft_write_test.c		\
+		ft_read_test.c		\
 
 TEST_SRC := $(addprefix $(SRC_DIR)/, $(TEST_SRC_FILES))
 
