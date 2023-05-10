@@ -29,7 +29,7 @@ _ft_strcmp:
     jz .done
 
     jmp .loop
-.done
+.done:
     movzx rax, cl
     movzx rdx, dl
     sub rax, rdx
