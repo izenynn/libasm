@@ -10,6 +10,7 @@ TEST_CASE(normal) {
   ASSERT(ret == dest, "strcpy must return the dest pointer");
   ASSERT(strcmp(ret, src) == 0, "strcpy failed with src: \"hello world!\" and dest[100]");
 }
+
 TEST_CASE(one_char) {
   char dest[100];
   char src[] = "a";
@@ -18,6 +19,7 @@ TEST_CASE(one_char) {
   ASSERT(ret == dest, "strcpy must return the dest pointer");
   ASSERT(strcmp(ret, src) == 0, "strcpy failed with src: \"a\" and dest[100]");
 }
+
 TEST_CASE(empty_string) {
   char dest[100];
   char src[] = "";

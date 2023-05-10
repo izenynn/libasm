@@ -6,10 +6,12 @@ TEST_CASE(normal) {
   char s[] = "hello world!";
   ASSERT(ft_strlen(s) == 12, "wrong length returned for \"hello world!\"");
 }
+
 TEST_CASE(one_char) {
   char s[] = "a";
   ASSERT(ft_strlen(s) == 1, "wrong length returned for \"a\"");
 }
+
 TEST_CASE(empty_string) {
   char s[] = "";
   ASSERT(ft_strlen(s) == 0, "wrong length returned for \"\"");
