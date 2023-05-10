@@ -58,8 +58,7 @@ TEST_DIR := mini-unit
 
 TEST_SRC_FILES := \
 		ft_strlen_test.c	\
-
-#		ft_strcmp_test.c	\
+		ft_strcpy_test.c	\
 
 TEST_SRC := $(addprefix $(SRC_DIR)/, $(TEST_SRC_FILES))
 

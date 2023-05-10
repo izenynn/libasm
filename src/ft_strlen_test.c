@@ -1,7 +1,5 @@
 #include "miniunit.h"
 
-#include <signal.h>
-
 #include "libasm.h"
 
 TEST_CASE(normal) {
