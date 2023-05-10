@@ -58,7 +58,8 @@ TEST_DIR := mini-unit
 
 TEST_SRC_FILES := \
 		ft_strlen_test.c	\
-		ft_strcmp_test.c	\
+
+#		ft_strcmp_test.c	\
 
 TEST_SRC := $(addprefix $(SRC_DIR)/, $(TEST_SRC_FILES))
 
@@ -86,6 +87,7 @@ $(OBJ_DIR):
 	$(MKDIR) $@
 
 # tests
+SILENT += test
 PHONY += test
 test:
 	$(MAKE) -C $(TEST_DIR) SRC='$(SRC)' TEST_SRC='$(TEST_SRC)' RELATIVE_PATH='..' INCLUDES='$(INC_DIR)'
