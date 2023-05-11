@@ -89,9 +89,9 @@ $(OBJ_DIR):
 	$(MKDIR) $@
 
 # tests
-SILENT += test
-PHONY += test
-test:
+SILENT += check
+PHONY += check
+check:
 	$(MAKE) -C $(TEST_DIR) SRC='$(SRC)' TEST_SRC='$(TEST_SRC)' RELATIVE_PATH='..' INCLUDES='$(INC_DIR)'
 
 # utils

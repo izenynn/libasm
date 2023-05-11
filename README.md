@@ -21,6 +21,23 @@ The aim of this project is to get familiar with assembly language by reconding a
 | `ft_read`   | man 2 read   |
 | `ft_strdup` | man 3 strdup |
 
+## Usage
+
+Compile the package:
+```bash
+make
+```
+
+To test the results, issue:
+```bash
+make check
+```
+
+To use it just copy and compile with the `libasm.a`, e.g.:
+```
+gcc main.c  -lasm -L.
+```
+
 ##
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-crayons.svg)](https://forthebadge.com)
