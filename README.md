@@ -35,7 +35,7 @@ make check
 
 To use it just copy and compile with the `libasm.a`, e.g.:
 ```
-gcc main.c  -lasm -L.
+gcc main.c -lasm -L.
 ```
 
 ##
